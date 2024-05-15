@@ -11,7 +11,7 @@
       <h1 class="text-blue-600 font-bold text-[40px]">Taskify</h1>
       <a
         class="bg-blue-600 py-2 px-4 text-white font-semibold rounded-2xl text-lg mt-4 flex items-center gap-2"
-        href="./index.html"
+        href="{% url 'home' %}"
       >
         <i class="bx bxs-left-arrow-circle bx-sm"></i> Go Back
       </a>
@@ -61,7 +61,7 @@
           <h2 class="text-gray-500 font-bold">
             Due Today <span class="font-medium text-gray-400">12:00 pm</span>
           </h2>
-          <a href="./delete.html">
+          <a href="{% url 'delete_task' %}">
             <i class="bx bxs-trash bx-sm text-red-500"></i>
           </a>
         </div>
