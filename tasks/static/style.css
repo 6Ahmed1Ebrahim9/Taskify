@@ -714,6 +714,9 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(37 99 235 / var(--tw-bg-opacity));
 }
+.bg-violet-600 {
+  background-color: #7f5af0;
+}
 
 .bg-white {
   --tw-bg-opacity: 1;
@@ -837,6 +840,9 @@ video {
 .text-gray-500 {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+.text-violet-600 {
+  color: #7f5af0;
 }
 
 .text-gray-700 {

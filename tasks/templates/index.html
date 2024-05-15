@@ -23,7 +23,7 @@
               </h1>
             </a>
             <p class="text-gray-500 text-md">
-              {{ task.description | slice:":35" }}
+              {{ task.description | slice:":35" }}...
             </p>
           </div>
           <!-- Right: Toggle complete mode -->
@@ -35,7 +35,7 @@
         <hr class="border-t border-gray-200 my-2" />
         <!-- Bottom: Time and Date | Delete -->
         <div class="flex flex-row justify-between">
-          <h2 class="text-blue-400 font-bold">
+          <h2 class="text-violet-600 font-bold">
             Completed <i class="bx bxs-badge-check"></i>
           </h2>
           <a href="{% url 'delete_task' task.id %}">
@@ -51,7 +51,7 @@
         <div class="flex flex-row justify-between">
           <!-- Left: Title and Description -->
           <div>
-            <a href="{% url 'task_detail' task.id %}">
+            <a href="{% url 'task_details' task.id %}">
               <h1 class="text-green-500 font-semibold text-xl">
                 {{ task.title }}
               </h1>
@@ -62,7 +62,7 @@
           </div>
           <!-- Right: Toggle complete mode -->
           <a href="{% url 'toggle_complete'  task.id %}">
-            <i class="bx bx-check-circle bx-sm text-blue-500"></i>
+            <i class="bx bx-check-circle bx-sm text-violet-600"></i>
             <!-- <i class='bx bxs-check-circle'></i> -->
           </a>
         </div>

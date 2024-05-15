@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 class Task(models.Model):
     title = models.CharField(max_length=35)
@@ -9,4 +10,4 @@ class Task(models.Model):
     completed = models.BooleanField(default=False)
 
     def __str__(self) -> str:
-        return f'{self.title}'
+        return f"{self.title}"

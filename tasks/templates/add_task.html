@@ -1,4 +1,16 @@
-{% extends 'index.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Box Icons CSS -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
     <title>Taskify</title>
   </head>
   <body
@@ -8,17 +20,20 @@
     <header
       class="bg-white shadow-lg w-10/12 h-auto rounded-3xl flex flex-col sm:flex-row justify-between items-center p-5 m-7 md:w-3/6"
     >
-      <h1 class="text-blue-600 font-bold text-[40px]">Taskify</h1>
+      <a href="{% url 'home' %}">
+        <h1 class="text-violet-600 font-bold text-[40px]">Taskify</h1>
+      </a>
       <a
-        class="bg-blue-600 py-2 px-4 text-white font-semibold rounded-2xl text-lg mt-4 flex items-center gap-2"
+        class="bg-violet-600 py-2 px-4 text-white font-semibold rounded-2xl text-lg mt-4 flex items-center gap-2"
         href="{% url 'home' %}"
       >
         <i class="bx bxs-home bx-sm"></i> Go Back
       </a>
     </header>
-    <h1 class="text-gray-500 font-bold text-[20px]">Add ToDo</h1>
+    <h1 class="text-violet-600 font-bold text-[20px]">Add ToDo</h1>
     <!-- Task Form -->
-    <form class="w-10/12 md:w-3/6 shadow-md bg-white rounded-2xl p-4">
+    <form method="post" class="w-10/12 md:w-3/6 shadow-md bg-white rounded-2xl p-4">
+      {% csrf_token %}
       <div class="mb-4">
         <label
           class="block text-gray-700 text-sm font-bold mb-2"
@@ -28,6 +43,7 @@
         <input
           class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           id="task-name"
+          name="title"
           type="text"
           placeholder="Enter task name"
           required
@@ -42,6 +58,7 @@
         <textarea
           class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           id="task-description"
+          name="description"
           placeholder="Enter task description"
         ></textarea>
       </div>
@@ -55,6 +72,7 @@
           <input
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="due-date"
+            name="due_date"
             type="date"
             required
           />
@@ -69,13 +87,14 @@
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="due-time"
             type="time"
+            name="due_time"
             required
           />
         </div>
       </div>
       <div class="flex items-center justify-center">
         <button
-          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          class="bg-violet-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           type="submit"
         >
           Create Task
